@@ -59,7 +59,7 @@ mgr != 7698 AND mgr != 7839 AND mgr != NULL
 SELECT *
 FROM emp 
 WHERE job = 'SALESMAN'
-AND hiredate >= TO_DATE('19810601', 'YYYYMMDD');
+AND hiredate >= TO_DATE('19810601', 'YYYYMMDD'); 
 
 SELECT *
 FROM emp
@@ -91,7 +91,9 @@ OR empno LIKE('78%');
 SELECT *
 FROM emp
 WHERE job = 'SALESMAN' 
-OR empno IN(7,8);
+OR (empno BETWEEN 7800 AND 7890
+OR empno BETWEEN 780 AND 789
+OR empno BETWEEN 78 AND 78);
 
 실습14
 SELECT *
@@ -149,6 +151,7 @@ ORDER BY ename;
 ORDER BY는 SELECT이후에 실행된다
 ORDER BY를 결과에 반영하려면 inline view는 () <-이고임 를 사용
 
+PPT(114P)
 SELECT *
 FROM (SELECT ROWNUM rn, a.*
     FROM (SELECT empno, ename
