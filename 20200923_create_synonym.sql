@@ -1,0 +1,3 @@
+-- SU, HR 계정에 SYNONYM을 생성할 수있는 권한을 부여한다
+GRANT CREATE SYNONYM TO su;
+GRANT CREATE SYNONYM TO hr;
