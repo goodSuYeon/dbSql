@@ -189,8 +189,3 @@ GROUP BY rollup(d.dname, job);
 SELECT job, deptno, SUM(NVL(sal + comm, 01)) sal
 FROM emp
 GROUP BY GROUPING SETS (job, deptno);
-
-
-
-
-
