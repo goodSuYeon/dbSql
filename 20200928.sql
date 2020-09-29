@@ -217,14 +217,27 @@ FROM emp;
 SELECT empno, ename, deptno, COUNT(*) over (PARTITION BY deptno) cnt
 FROM emp;
 
+--실습 ana2
 SELECT empno, ename, sal, deptno, ROUND(AVG(sal) over (PARTITION BY deptno),2) avg_sal
 FROM emp;
 
 --실습 ana3
-SELECT empno, ename, sal,deptno, MAX(sal) over (PARTITION BY deptno) max_sal
+SELECT empno, ename, sal, deptno, MAX(sal) over (PARTITION BY deptno) max_sal
 FROM emp;
+
+--분석함수를 사용하지 않은 실습ana3
+SELECT ROWNUM rn, empno, ename, sal, deptno
+FROM
+(SELECT empno, ename , sal, deptno, MAX(sal)
+FROM emp
+ORDER BY deptno, sal DESC))
 
 --실습 ana4
 SELECT empno, ename, sal, deptno, MIN(sal) over (PARTITION BY deptno) min_sal
 FROM emp;
 
+SELECT TRANSACTION ISOLATION LEVEL
+SERIALIZABLE;
+
+ISOLATION LEVEL (고립화레벨)
+ : 후행 트랜잭션이 선행트랜잭션에 어떻게 영향을 미치는지를 정의한 단계
