@@ -7,7 +7,7 @@ WHERE sal > (SELECT AVG(sal)
               
 상호 연관 서브쿼리             
 -- 본인이 속한 부서의 급여 평균보다 높은 급여를 받는 사람들을 조회
-SELECT *
+SELECT * 
 FROM emp e
 WHERE sal > (SELECT AVG(sal)
               FROM emp b
