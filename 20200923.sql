@@ -67,7 +67,7 @@ WHERE empno = :empno;
 (2) emp, deptno(=) , empno(LIKE : empno || ' %')     -(1,2) 
     dept, deptno(=)
 (3) dept, deptno(=)                                  -(3,5)
-(4) emp , deptno(=) , sal(BETWEEN)                   -(4)
+(4) emp , deptno(=) , sal(BETWEEN)                    -(4)
 (5) dept, deptno(=) , loc(=)                         -(3,5)
     emp , deptno(=)
 
